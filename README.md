@@ -1,25 +1,13 @@
-Pi-hole Admin Dashboard
+Pi-hole Logger Syslog Aggregator
 ============
-[![Join the chat at https://gitter.im/pi-hole/AdminLTE](https://badges.gitter.im/pi-hole/AdminLTE.svg)](https://gitter.im/pi-hole/AdminLTE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Based on the Pi-Hole ad blocker.
 
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif "AdminLTE Presentation")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3J2L3Z4DHW9UY "Donate")
+Adds general syslog reading capability to turn a Raspberry Pi with Pi-Hole into a syslog aggregator/log reader. The goal of the project is add support for different kinds of logs and enable reporting/alerting.
 
-Using **[AdminLTE](https://almsaeedstudio.com)**, this project will create a Web interface for the ad-blocking Pi-hole: **a black hole for Internet advertisements**.
+See my blog for more information on the development behind Pi-Hole Logger (http://myname.website/extending-pi-hole-making-a-log-aggregator/)
 
-From this interface, you will be able to see stats on how well your Pi-hole is performing.  You will also be able to update the lists used to block ads.
+Screenshot showing Pi-Hole reading and parsing DHCP syslog data from an Asus router. Pi-hole Web interface
+![Pi-hole Web interface](http://myname.website/wp-content/uploads/2016/09/pihole-logger.png)
 
-![Pi-hole Web interface](http://i.imgur.com/5lLAUGo.png)
-![Fully responsive](http://i.imgur.com/fHuWR6E.png)
 
-## API
-A read-only API can be accessed at `/admin/api.php`. With either no parameters or `api.php?summary` it returns the following JSON:
-```JSON
-{
-	"domains_being_blocked": "136,708",
-	"dns_queries_today": "18,108",
-	"ads_blocked_today": "14,648",
-	"ads_percentage_today": "80.9"
-}
-```
-
-There are many more parameters, such as `summaryRaw`, `overTimeData`, `topItems`, `recentItems`, `getQueryTypes`, `getForwardDestinations`, `getQuerySources`, and finally `getAllQueries`.
+Current features: Can read DHCP data from a router via syslog
