@@ -136,7 +136,23 @@
               $client = $exploded[count($exploded)-1];
               $status = "";
             }
-            elseif (substr($tmp, 0, 9) == "forwarded" ){
+            elseif (substr($tmp, 8, 9) == "dH"){
+              $type = substr($exploded[count($exploded)-4], 0, -5);
+              $domain = $exploded[count($exploded)-2];
+              $client = $exploded[count($exploded)-1];
+              //$client = $exploded[count($exploded)-1];
+	      $status = "OK";
+            }	
+
+	    elseif (substr($tmp, 0, 2) == "DH"){
+              $type = substr($exploded[count($exploded)-4], 0, -5);
+              $domain = $exploded[count($exploded)-2];
+              $client = $exploded[count($exploded)-1];
+              //$client = ""
+	      $status = "OK";
+            }	  
+ 
+	    elseif (substr($tmp, 0, 9) == "forwarded" ){
               $status="OK";
             }
             elseif (substr($tmp, strlen($tmp) - 12, 12)  == "gravity.list"  && $exploded[count($exploded)-5] != "read"){
@@ -262,7 +278,7 @@
     }
 
     function findQueriesAll($var) {
-        return strpos($var, ": query[") || strpos($var, "gravity.list") || strpos($var, ": forwarded") !== false;
+        return strpos($var, ": query[") || strpos($var, "gravity.list") || strpos($var, " DHCP")  || strpos($var, ": forwarded") !== false;
     }
 
 
