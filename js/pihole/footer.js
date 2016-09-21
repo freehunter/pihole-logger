@@ -31,8 +31,8 @@ function versionCompare(left, right) {
     return 0;
 }
 
-// Update check
-$.getJSON("https://api.github.com/repos/pi-hole/pi-hole/releases/latest", function(json) {
+/* Update check
+$.getJSON("https://api.github.com/repos/freehunter/pi-hole/releases/latest", function(json) {
     // Skip if on dev
     if(piholeVersion !== "vDev" && versionCompare(piholeVersion, json.tag_name.slice(1)) < 0) {
         // Alert user
@@ -42,7 +42,7 @@ $.getJSON("https://api.github.com/repos/pi-hole/pi-hole/releases/latest", functi
         }
     }
 });
-$.getJSON("https://api.github.com/repos/pi-hole/AdminLTE/releases/latest", function(json) {
+$.getJSON("https://api.github.com/repos/freehunter/pi-hole/releases/latest", function(json) {
     // Skip if on dev
     if(webVersion !== "vDev" && versionCompare(webVersion, json.tag_name.slice(1)) < 0) {
         // Alert user
@@ -53,7 +53,7 @@ $.getJSON("https://api.github.com/repos/pi-hole/AdminLTE/releases/latest", funct
     }
 });
 
-/*
+
  * Make sure that Pi-hole is updated to at least v2.7, since that is needed to use the sudo
  * features of the interface. Skip if on dev
  *
