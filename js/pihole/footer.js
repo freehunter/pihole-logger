@@ -56,6 +56,9 @@ $.getJSON("https://api.github.com/repos/pi-hole/AdminLTE/releases/latest", funct
 /*
  * Make sure that Pi-hole is updated to at least v2.7, since that is needed to use the sudo
  * features of the interface. Skip if on dev
+ *
+ * I've actually turned this off, of course the system will be at 2.7 if you're running Event Horizon
+ *
+ *if(piholeVersion !== "vDev" && versionCompare(piholeVersion, "v2.7") < 0)
+ *   alert("Pi-hole needs to be updated to at least v2.7 before you can use features such as whitelisting/blacklisting from this web interface!")
  */
-if(piholeVersion !== "vDev" && versionCompare(piholeVersion, "v2.7") < 0)
-    alert("Pi-hole needs to be updated to at least v2.7 before you can use features such as whitelisting/blacklisting from this web interface!")
