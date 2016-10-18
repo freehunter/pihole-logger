@@ -2,7 +2,7 @@ Pi-hole Logger Syslog Aggregator
 ============
 Based on the Pi-Hole ad blocker.
 
-Adds general syslog reading capability to turn a Raspberry Pi with Pi-Hole into a syslog aggregator/log reader. The goal of the project is add support for different kinds of logs and enable reporting/alerting.
+Adds general syslog reading capability to turn a Raspberry Pi with Pi-Hole into a syslog aggregator/log reader. The goal of the project is add support for different kinds of logs to enable searching event logs.
 
 See my blog for more information on the development behind Pi-Hole Logger (http://myname.website/extending-pi-hole-making-a-log-aggregator/)
 
